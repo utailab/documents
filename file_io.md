@@ -22,10 +22,10 @@ devices and what services it offers to work with the them.
 On Unix-like operating systems such as Linux, almost all devices are
 represented as files (there are exceptions to this however). A file is a
 conceptual entity that can be opened, read, written and closed just like
-regular files on a hard disk. So there is no difference between a regular file
-on the disk and a USB device because the operations that the operating system
-offers are the same for both. Consequently, to do I/O on any regular file or
-device (sometimes called special file), we must first **open** it, then do the
+*regular files* on a hard disk. So there is no difference between a regular
+file on the disk and a USB device because the operations that the operating
+system offers are the same for both. Consequently, to do I/O on any regular
+file or device (called *special file*), we must first **open** it, then do the
 **reading** or **writing** and finally **close** it.
 
 ## I/O in Programming Languages
@@ -70,7 +70,7 @@ int main()
 }
 ```
 
-Writing to the controlling terminal:
+Writing to the controlling terminal (special file):
 
 Python:
 
