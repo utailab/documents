@@ -33,7 +33,7 @@ device (sometimes called special file), we must first **open** it, then do the
 Building on what was said, programming languages offer these operations (open,
 read, write, close) on their own way through library functions and classes.
 
-An example in Python:
+Reading from a regular file in Python:
 
 ```python
 >>> file = open('README.md', 'r')
@@ -67,6 +67,39 @@ int main()
     close(file);
 
     return 0;
+}
+```
+
+Writing to the controlling terminal:
+
+Python:
+
+```python
+>>> file = open('/dev/tty', 'w')
+>>> file
+<_io.TextIOWrapper name='/dev/tty' mode='w' encoding='UTF-8'>
+>>> file.write('This is the controlling terminal!\n')
+This is the controling terminal!
+33
+>>> file.close()
+```
+
+C:
+
+```c
+#include <unistd.h>
+#include <fcntl.h>
+
+int main()
+{
+	int fd;
+	char buffer[] = "This is the controlling terminal device!\n";
+
+	fd = open("/dev/tty", O_WRONLY);
+	write(fd, buffer, sizeof(buffer));
+	close(fd);
+
+	return 0;
 }
 ```
 
