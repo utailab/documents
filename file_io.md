@@ -61,7 +61,7 @@ int main()
     char buffer[1024];
 
     file = open("README.md", O_RDONLY);
-    count = read(file, buffer, 1024);
+    count = read(file, buffer, 1023);
     buffer[count] = '\0';
     printf("%s", buffer);
     close(file);
