@@ -8,30 +8,32 @@ trivial task in programming requires some kind of *I/O*. But what exactly is
 I/O? I/O stands for *Input/Output*. In programming jargon, input means reading
 some values from a device and output means writing some values to a device.
 Device is a general word that not only refers to monitors, hard disk drives,
-CD-ROMs, etc but also USB ports, network cards and almost everything that is a
-part of a computer.
+CD-ROM drives, etc but also USB ports, network cards and almost everything that
+is a part of a computer.
 
 To be able to do I/O on any device such as hard disks or monitors, we must ask
-the operating system to the I/O on behalf of us. Therefore programming
-languages library functions and classes use the operating system services to do
-the I/O. Based on this, we should know how the operating system handles the
-devices and what services it offers to work with the them.
+the operating system to do the I/O on behalf of us. Therefore, library
+functions and classes of programming languages use the operating system
+services to do the I/O. Based on this, we should understand how the operating
+system handles the devices and what services it offers to work with the them.
 
 ## I/O the Unix Way
 
 On Unix-like operating systems such as Linux, almost all devices are
 represented as files (there are exceptions to this however). A file is a
 conceptual entity that can be opened, read, written and closed just like
-*regular files* on a hard disk. So there is no difference between a regular
-file on the disk and a USB device because the operations that the operating
-system offers are the same for both. Consequently, to do I/O on any regular
-file or device (called *special file*), we must first **open** it, then do the
-**reading** or **writing** and finally **close** it.
+*regular files* on a hard disk. So, as far as the programmer is concerned,
+there is no difference between a regular file on the disk and a USB device
+because the operations that the operating system offers are the same for both.
+Consequently, to do I/O on any regular file or device (called *special file*),
+we must first **open** it, then do the **reading** or **writing** and finally
+**close** it.
 
 ## I/O in Programming Languages
 
 Building on what was said, programming languages offer these operations (open,
 read, write, close) on their own way through library functions and classes.
+These functions or classes use the operating system services under the hood.
 
 Reading from a regular file in Python:
 
@@ -103,5 +105,5 @@ int main()
 }
 ```
 
-You can see that the operations are the same: open, read, close. Only the
-details vary.
+You can see that the operations are the same: open, read, write and close. Only
+the details vary.
